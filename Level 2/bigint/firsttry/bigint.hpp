@@ -52,7 +52,7 @@ class bigint
 			return (bigint(add_strings(num, oth.num)));
 		}
 
-		bigint operator+=(const bigint &oth) const
+		bigint &operator+=(const bigint &oth)
 		{
 			num = add_strings(num, oth.num);
 			return (*this);
