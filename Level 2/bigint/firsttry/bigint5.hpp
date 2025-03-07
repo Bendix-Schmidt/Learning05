@@ -6,8 +6,8 @@
 class bigint
 {
 	private:
-		std::string	num;
-
+		std::string num;
+	
 	public:
 		bigint() : num("0"){}
 		bigint(size_t n) : num(std::to_string(n)){}
@@ -47,7 +47,7 @@ class bigint
 
 		bigint operator+(const bigint &oth) const
 		{
-			return (bigint(add_strings(num, oth.num)));
+			return(bigint(add_strings(num, oth.num)));
 		}
 
 		bigint &operator+=(const bigint &oth)
@@ -83,9 +83,7 @@ class bigint
 		bigint &operator>>=(const bigint &oth)
 		{
 			if (bigint(num.size()) <= oth)
-			{
 				num = "0";
-			}
 			else
 			{
 				bigint i(0);

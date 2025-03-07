@@ -1,13 +1,13 @@
 #pragma once
+#include <iostream>
 #include <algorithm>
 #include <string>
-#include <iostream>
 
 class bigint
 {
-	private:
-		std::string	num;
-
+	private: 
+		std::string num;
+	
 	public:
 		bigint() : num("0"){}
 		bigint(size_t n) : num(std::to_string(n)){}
@@ -15,13 +15,13 @@ class bigint
 		{
 			if (n.empty() || !(std::all_of(n.begin(), n.end(), ::isdigit)) || (n.size() > 1 && n[0] == '0'))
 			{
-				std::cout << "Invalid string" << std::endl;
+				std::cout << "Invalid String" << std::endl;
 				num = "0";
 			}
 			else
 				num = n;
 		}
-		bigint(const bigint &oth) : num(oth.num){}
+		bigint(const bigint &oth) : num(oth.num) {}
 
 		friend std::ostream &operator<<(std::ostream &os, const bigint &b)
 		{
@@ -31,9 +31,9 @@ class bigint
 
 		std::string add_strings(const std::string s1, const std::string s2) const
 		{
-			std::string result;
 			int carry = 0;
-			int i = s1.size() - 1;
+			std::string result;
+			int i = s1.size() - 1; 
 			int j = s2.size() - 1;
 			while (i >= 0 || j >= 0 || carry)
 			{
@@ -56,12 +56,6 @@ class bigint
 			return (*this);
 		}
 
-		bigint &operator++()
-		{
-			*this += bigint(1);
-			return (*this);
-		}
-
 		bigint operator++(int)
 		{
 			bigint tmp(*this);
@@ -69,9 +63,9 @@ class bigint
 			return (tmp);
 		}
 
-		bigint operator<<(size_t shift) const
+		bigint &operator++()
 		{
-			return (bigint(num + std::string(shift, '0')));
+			return (*this += bigint(1));
 		}
 
 		bigint &operator<<=(size_t shift)
@@ -80,12 +74,15 @@ class bigint
 			return (*this);
 		}
 
+		bigint operator<<(size_t shift) const
+		{
+			return(bigint(num + std::string(shift, '0')));
+		}
+
 		bigint &operator>>=(const bigint &oth)
 		{
 			if (bigint(num.size()) <= oth)
-			{
 				num = "0";
-			}
 			else
 			{
 				bigint i(0);

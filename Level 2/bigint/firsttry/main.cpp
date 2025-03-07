@@ -1,4 +1,4 @@
-#include "bigint4.hpp"
+#include "bigint6.hpp"
 #include <iostream>
 
 int main(){
@@ -12,7 +12,7 @@ int main(){
 	std::cout << "a+b " << a + b << std::endl;
 	std::cout << "c+=a " << (c += a) << std::endl;
 	std::cout << "b = " << b << std::endl;
-	/*std::cout << "++b " << ++b << std::endl;
+	std::cout << "++b " << ++b << std::endl;
 	std::cout << "b++ " << b++ << std::endl;
 	std::cout << "(b << 10) + 42 " << (b << 10) + 42 << std::endl;
 	std::cout << "d<<=4 " << (d <<= 4) << std::endl;
@@ -24,7 +24,7 @@ int main(){
 	std::cout << "d == a " << (d == a) << std::endl;
 	std::cout << "d != a " << (d != a) << std::endl;
 	std::cout << "d <= a " << (d <= a) << std::endl;
-	std::cout << "d >= a " << (d >= a) << std::endl; */
+	std::cout << "d >= a " << (d >= a) << std::endl;
 
 	// step 6: extra test from exam
 	//std::cout << a - a << std::endl;
