@@ -1,9 +1,9 @@
-#include "bigint7.hpp"
+#include "bigint8.hpp"
 #include <iostream>
 
 int main(){
 	const bigint a(42);
-	bigint b(21), c, d(1337), e(d);
+	bigint b(5), c("09999999"), d(1337), e(d);
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "c = " << c << std::endl;
